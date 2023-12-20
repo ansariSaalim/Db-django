@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+    <title>All Students</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Add dark mode styling here */
+        @media (prefers-color-scheme: dark) {
+            .dark body {
+                background-color: #1a202c;
+                color: #cbd5e0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-800 ">
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-semibold mb-4">All Students</h2>
+        <table class="min-w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-2 px-4">Name</th>
+                    <th class="py-2 px-4">Email</th>
+                    <th class="py-2 px-4">Date of Birth</th>
+                    <th class="py-2 px-4">Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr class="border-t text-black border-gray-300 dark:border-gray-600">
+                        <td class="py-2 px-4">{{ student.name }}</td>
+                        <td class="py-2 px-4">{{ student.email }}</td>
+                        <td class="py-2 px-4">{{ student.date_of_birth }}</td>
+                        <td class="py-2 px-4">{{ student.course }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
